@@ -105,7 +105,7 @@ readfile($filename);
           echo $filename;
           echo'">';
           
-          echo'<h4>não foi encontrado!!!</h4><button onclick="myFunction()">Copy text</button>';
+          echo'<h4>não foi encontrado!!!</h4><button onclick="myFunction()">Copiar directorio</button>';
         echo'<script>function myFunction() {var copyText = document.getElementById("myInput"); copyText.select();
             
           
