@@ -101,7 +101,7 @@ readfile($filename);
 
     } else {
         
-        echo '<h4>O Diretorio</h4> <input type="text" id="myInput" style="height: 100px; width:1000px" value="';
+        echo '<h4>O Diretorio</h4> <input type="text" id="myInput" style="height: 100px; width:1500px" value="';
           echo $filename;
           echo'">';
           
