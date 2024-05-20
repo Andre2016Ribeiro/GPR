@@ -39,8 +39,11 @@ include "../config/config.php";
         }
         return false;
       });
+      
+      
 
-      jQuery("#result").live("click", function(e) {
+      
+      jQuery(".show").live("click", function(e) {
         var $clicked = $(e.target);
         var $name = $clicked.find(".name").html();
         var decoded = $("<div/>").html($name).text();
@@ -54,6 +57,7 @@ include "../config/config.php";
       });
       $('#searchid').click(function() {
         jQuery("#result").fadeIn();
+        
       });
     });
   </script>
@@ -445,7 +449,7 @@ include "../config/config.php";
 
           }
           if($Pasta!=""){ echo "<br>";
-            echo '<a style="color:blue;" href="2.php/?artigo=';
+            echo '<a style="color:blue;" href="ProcDesen.php/?artigo=';
             echo $exibir9['Artigo'];
             echo '" target="_blank">';
             echo "Abrir desenho";
@@ -671,7 +675,7 @@ include "../config/config.php";
 
           }
           if($Pasta!=""){ echo  "<tr><td><span style='font-family: Arial; font-size: 11px; '>";
-            echo '<a style="color:blue;" href="2.php/?artigo=';
+            echo '<a style="color:blue;" href="ProcDesen.php/?artigo=';
             echo $exibir['Componente'];
             echo '" target="_blank">';
             echo $exibir['Componente'];
@@ -824,7 +828,7 @@ include "../config/config.php";
     
               }
               if($Pasta!=""){ echo  "<tr><td><span style='font-family: Arial; font-size: 11px; color:blue; '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-                echo '<a style="color:blue;" href="2.php/?artigo=';
+                echo '<a style="color:blue;" href="ProcDesen.php/?artigo=';
                 echo $exibira['Componente'];
                 echo '" target="_blank">';
                 echo $exibira['Componente'];
@@ -984,7 +988,7 @@ include "../config/config.php";
               }
               if($Pasta!=""){ echo  "<tr><td><span style='font-family: Arial; font-size: 11px; color:blue; '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
                 echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-                echo '<a style="color:blue;" href="2.php/?artigo=';
+                echo '<a style="color:blue;" href="ProcDesen.php/?artigo=';
                 echo $exibirb['Componente'];
                 echo '" target="_blank">';
                 echo $exibirb['Componente'];
@@ -1129,7 +1133,7 @@ include "../config/config.php";
                       if($Pasta!=""){ echo  "<tr><td><span style='font-family: Arial; font-size: 11px; color:blue; '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
                         echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                         echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-                        echo '<a style="color:blue;" href="2.php/?artigo=';
+                        echo '<a style="color:blue;" href="ProcDesen.php/?artigo=';
                         echo $exibirc['Componente'];
                         echo '" target="_blank">';
                         echo $exibirc['Componente'];
@@ -1270,7 +1274,7 @@ include "../config/config.php";
                             echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                             echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                             echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-                            echo '<a style="color:blue;" href="2.php/?artigo=';
+                            echo '<a style="color:blue;" href="ProcDesen.php/?artigo=';
                             echo $exibird['Componente'];
                             echo '" target="_blank">';
                             echo $exibird['Componente'];

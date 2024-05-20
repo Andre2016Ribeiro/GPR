@@ -20,10 +20,11 @@
     $position = strpos($artigo, '.');
     if ($position !== false) {
         $artigosp = substr($artigo, 0, $position);
+        
         $sql2 = "SELECT * FROM Artigo where Artigo='" . $artigosp . "'";
     $executar2 = sqlsrv_query($conn, $sql2);
     $exibir2 = sqlsrv_fetch_array($executar2);
-    $descricao2=$exibir2['Descricao'] ;
+    $descricao2=$exibir2['Descricao'];
     $descricao2 = substr_replace($descricao2,'',-1);
     $descricao2 = str_replace("/"," ",$descricao2);
     }
@@ -54,6 +55,7 @@
 
               case "0S":
                 $Pasta="Producao/Nivel 0 - Tubos Maquinados/0S/" . $artigo . "_". $exibir1['Descricao'] . "/" . $artigo . "_00" . $versao . "_N01_" . $exibir1['Descricao'] . ".pdf";
+                
                     break;
               case "11":
                 $Pasta="Producao/Nivel 1 - Estruturas Soldadas/Linha 1/" . $artigo . "_". $exibir1['Descricao'] . "/" . $artigo . "_00" . $versao . "_N01_" . $exibir1['Descricao'] . ".pdf";
@@ -85,7 +87,7 @@
 
 
     $filename = "Z:/PG 3 - Concepcao e Desenvolvimento/02 - Desenhos Arquivo/" . $Pasta;
-   
+  
     
     if (file_exists($filename)) {
         echo "The directory $Pasta exists.";
@@ -100,10 +102,12 @@ readfile($filename);
 
 
     } else {
-        
+      
         echo '<h4>O Diretorio</h4> <input type="text" id="myInput" style="height: 100px; width:1500px" value="';
-          echo $filename;
-          echo'">';
+       
+       
+        print $filename;
+         echo'">';  
           
           echo'<h4>não foi encontrado!!!</h4><button onclick="myFunction()">Copiar directorio</button>';
         echo'<script>function myFunction() {var copyText = document.getElementById("myInput"); copyText.select();
