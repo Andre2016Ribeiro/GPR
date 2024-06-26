@@ -1,8 +1,12 @@
-<?php 
+<?php header('Content-type: text/html; charset=UTF-8');
   include "../config/config.php";
 // The location of the PDF file 
 // on the server 
 
+
+echo "<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+  </head>";
     
     $artigo=$_GET['artigo'];
     $Pasta="";
@@ -38,7 +42,7 @@
     switch ($Ar) {
               case "01":
                   $Pasta="Producao/Nivel 0 - Tubos Maquinados/Linha 1/". $artigosp . "_". $descricao2 . "/" . $artigosp . "_00" . $versao . "_N01_" . $descricao2 . ".pdf";
-                  $filename = "Z:/PG 3 - Concepcao e Desenvolvimento/02 - Desenhos Arquivo/" . $Pasta;
+                  $filename = "//10.0.0.241/orthos/PG 3 - Concepcao e Desenvolvimento/02 - Desenhos Arquivo/" . $Pasta;
                   if (file_exists($filename)) {            
                 } else {$descricao2=$exibir1['Descricao'];$descricao2 = str_replace("/"," ",$descricao2);
                     $Pasta="Producao/Nivel 0 - Tubos Maquinados/Linha 1/". $artigosp . "_". $descricao2 . "/" . $artigosp . "_00" . $versao . "_N01_" . $descricao2 . ".pdf";
@@ -86,11 +90,15 @@
     }
 
 
-    $filename = "Z:/PG 3 - Concepcao e Desenvolvimento/02 - Desenhos Arquivo/" . $Pasta;
-  
+    $filename = "//10.0.0.241/orthos/PG 3 - Concepcao e Desenvolvimento/02 - Desenhos Arquivo/" . $Pasta;
+   
+    
+    $fp = fopen('llog.txt', 'w');
+fwrite($fp, $filename);
+fclose($fp);
     
     if (file_exists($filename)) {
-        echo "The directory $Pasta exists.";
+        
 // Header content type 
 header("Content-type: application/pdf"); 
   
@@ -101,12 +109,13 @@ readfile($filename);
 
 
 
-    } else {
+    } else {$filenam = "//10.0.0.241/orthos/PG 3 - Concepcao e Desenvolvimento/02 - Desenhos Arquivo/" . $Pasta;
+
       
-        echo '<h4>O Diretorio</h4> <input type="text" id="myInput" style="height: 100px; width:1500px" value="';
+        echo '<body><h4>O Diretorio</h4> <input type="text" id="myInput" style="height: 100px; width:1500px" value="';
        
        
-        print $filename;
+        print $filenam;
          echo'">';  
           
           echo'<h4>não foi encontrado!!!</h4><button onclick="myFunction()">Copiar directorio</button>';
@@ -118,11 +127,11 @@ readfile($filename);
           
             // Alert the copied text
             alert("Copied the text: " + copyText.value);
-          }</script>';
+          }</script></body>';
     }
 
 
-
+ 
 
     //"Z:/PG 3 - Concepcao e Desenvolvimento/02 - Desenhos Arquivo/Producao/Nivel 0 - Tubos Maquinados/Linha 1/0TAJI0SNARD08_Aj-Sanita Artic-Varão Inox D8mm (Brt)/0TAJI0SNARD08_001_N01.PDF"; 
   
